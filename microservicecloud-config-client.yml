@@ -1,0 +1,40 @@
+# 切记保存为UTF-8类型.
+spring:
+  profiles:
+    active:
+    - dev # 开发环境
+
+---
+server:
+    port: 8201
+    
+spring:
+  profiles: dev # 开发环境
+  application:
+    name: microservicecloud-config-client 
+
+eureka:
+  client:
+    service-url:
+      #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://127.0.0.1:7001/eureka/        
+    
+---
+server:
+    port: 8202
+    
+spring:
+  profiles: test # 开发环境
+  application:
+    name: microservicecloud-config-client
+
+eureka:
+  client:
+    service-url:
+      #设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。
+      defaultZone: http://127.0.0.1:7001/eureka/
+ 
+
+
+
+ 
